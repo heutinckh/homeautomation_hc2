@@ -7,7 +7,11 @@ Goal:
 
 - I - Release Reproducability:
     - a: Fresh Yocto based build (thud at the moment)
+          - Prepare and build scripts: DONE
+          
     - b: Resulting image directly transferrable / installable on uSD
+          - Deploy script: BUSY
+
     - c: Verified on Odroid XU4-HC2
 
 - II - Domoticz Integration
@@ -22,3 +26,9 @@ Goal:
     
 - IV - Smart power management
 - V - ...
+
+
+
+Status:
+Deployed image does not boot device (or at least no output on console seen
+ -> check u-boot configuration files (u-boot.ini/scr)
