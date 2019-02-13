@@ -27,7 +27,7 @@ cp -r layers/meta-hh ${YOCTO_DIR}/.
 . ./oe-*
 bitbake-layers add-layer ../meta-odroid
 bitbake-layers add-layer ../meta-hh
-echo "MACHINE = \"odroid-c2\"" >> conf/local.conf 
+echo "MACHINE = \"odroid-xu4-hc2\"" >> conf/local.conf 
 
 cd ${CWD}
 
