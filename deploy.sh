@@ -41,8 +41,7 @@ fi
 INPUT_FILE=`find ${IMG_DIR} -name u-boot-dtb.bin`
 dd if=${RESOURCE_DIR}/bl1.bin.hardkernel           of=${DEVICE} iflag=dsync oflag=dsync seek=1
 dd if=${RESOURCE_DIR}/bl2.bin.hardkernel.1mb_uboot of=${DEVICE} iflag=dsync oflag=dsync seek=31
-#dd if=${IMG_DIR}/u-boot-dtb.bin                    of=${DEVICE} iflag=dsync oflag=dsync seek=63
-dd if=${RESOURCE_DIR}/u-boot-dtb.bin               of=${DEVICE} iflag=dsync oflag=dsync seek=63
+dd if=${INPUT_FILE}                                of=${DEVICE} iflag=dsync oflag=dsync seek=63
 dd if=${RESOURCE_DIR}/tzsw.bin.hardkernel          of=${DEVICE} iflag=dsync oflag=dsync seek=2111
 
 sudo sync
