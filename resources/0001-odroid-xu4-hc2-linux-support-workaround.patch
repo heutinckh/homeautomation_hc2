@@ -1,0 +1,35 @@
+From c94f2ee5dd97765be537f8b62cee9a03845e5287 Mon Sep 17 00:00:00 2001
+From: "H.Heutinck" <heutinck.h@gmail.com>
+Date: Thu, 14 Feb 2019 20:44:01 +0100
+Subject: [PATCH] odroid-xu4-hc2 linux support workaround
+
+---
+ recipes-kernel/linux/linux-stable.inc     | 2 +-
+ recipes-kernel/linux/linux-stable_4.19.bb | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/recipes-kernel/linux/linux-stable.inc b/recipes-kernel/linux/linux-stable.inc
+index 6b6a919..673733d 100644
+--- a/recipes-kernel/linux/linux-stable.inc
++++ b/recipes-kernel/linux/linux-stable.inc
+@@ -16,4 +16,4 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
+ 
+ KCONF_BSP_AUDIT_LEVEL = "0"
+ 
+-COMPATIBLE_MACHINE = "(odroid-c1|odroid-c2|odroid-xu3|odroid-xu4|odroid-xu3-lite|odroid-hc1|odroid-h2)"
++COMPATIBLE_MACHINE = "(odroid-c1|odroid-c2|odroid-xu3|odroid-xu4|odroid-xu3-lite|odroid-hc1|odroid-h2|odroid-xu4-hc2)"
+diff --git a/recipes-kernel/linux/linux-stable_4.19.bb b/recipes-kernel/linux/linux-stable_4.19.bb
+index eb1eef9..d41941a 100644
+--- a/recipes-kernel/linux/linux-stable_4.19.bb
++++ b/recipes-kernel/linux/linux-stable_4.19.bb
+@@ -24,6 +24,7 @@ KMACHINE_odroid-hc1 = "odroid-hc1"
+ KMACHINE_odroid-xu3 = "odroid-xu3"
+ KMACHINE_odroid-xu3-lite = "odroid-xu3-lite"
+ KMACHINE_odroid-xu4 = "odroid-xu4"
++KMACHINE_odroid-xu4-hc2 = "odroid-xu4"
+ KMACHINE_odroid-c2 = "odroid-c2"
+ KMACHINE_odroid-c1 = "odroid-c1"
+ 
+-- 
+2.19.1
+
