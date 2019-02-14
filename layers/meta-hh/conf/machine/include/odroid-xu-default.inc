@@ -12,7 +12,7 @@ UBOOT_LOADADDRESS = "0x40007FC0"
 UBOOT_KERNEL_NAME = "zImage"
 UBOOT_USB_NET = "1"
 
-WKS_FILE ?= "odroid_xu-u-boot.wks"
+WKS_FILE ?= "odroid-xu4-hs2.wks"
 
 MACHINE_FEATURES_append = " alsa screen"
 
