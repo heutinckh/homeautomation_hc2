@@ -46,14 +46,14 @@ if [ "_${DEVICE}" = "_IMG" ]; then
 
     # Add bootloaders
     UBOOT_FILE=`find ${IMG_DIR} -name u-boot-dtb.bin`
-    dd if=${RESOURCE_DIR}/bl1.bin.hardkernel            of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=1
-    dd if=${RESOURCE_DIR}/bl2.bin.hardkernel.1mb_uboot  of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=31
-    dd if=${UBOOT_FILE}                                 of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=63
-    dd if=${RESOURCE_DIR}/tzsw.bin.hardkernel           of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=2111
+    dd if=${RESOURCE_DIR}/bl1.bin.hardkernel            of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=1 bs=512
+    dd if=${RESOURCE_DIR}/bl2.bin.hardkernel.1mb_uboot  of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=31 bs=512
+    dd if=${UBOOT_FILE}                                 of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=63 bs=512
+    dd if=${RESOURCE_DIR}/tzsw.bin.hardkernel           of=${DEPLOY_DIR}/${IMG_NAME} iflag=dsync oflag=dsync seek=2111 bs=512
 
     # Add rootfs
-    ROOTFS_FILE=`find ${IMG_DIR} -name *xu4-hc2.ext4`
-    dd if=${ROOTFS_FILE} of=${DEPLOY_DIR}/${IMG_NAME} bs=1M iflag=fullblock oflag=direct conv=fsync status=progress
+    #ROOTFS_FILE=`find ${IMG_DIR} -name *xu4-hc2.ext4`
+    #dd if=${ROOTFS_FILE} of=${DEPLOY_DIR}/${IMG_NAME} bs=1M iflag=fullblock oflag=direct conv=fsync status=progress
 
 else
 
