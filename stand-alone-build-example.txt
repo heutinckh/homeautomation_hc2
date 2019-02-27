@@ -21,3 +21,6 @@ blacksun@BEAST:~/Projects/Odroid/StandAlone/poky/build$ bitbake-layers add-layer
 
 
 bitbake core-image-minimal
+
+
+sudo dd if=<.rootfs.wic> of=/dev/mmcblk0 bs=4M iflag=fullblock oflag=direct conv=fsync status=progress
