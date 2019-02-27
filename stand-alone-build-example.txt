@@ -1,0 +1,23 @@
+iBUilding at ~/Projects/Odroid/StandAlone/poky: bitbake core-image-minimal
+
+git clone git://git.yoctoproject.org/poky
+cd poky/
+git clone git://git.openembedded.org/openembedded-core
+git clone https://github.com/akuster/meta-odroid.git
+source oe-init-build-env
+bitbake add-layer ../meta-odroid/
+cd ..
+mv meta old-meta
+mv meta-openembedded/ meta
+
+
+NOTE: Starting bitbake server...
+layer                 path                                      priority
+==========================================================================
+meta                  /home/blacksun/Projects/Odroid/StandAlone/poky/meta  5
+meta-poky             /home/blacksun/Projects/Odroid/StandAlone/poky/meta-poky  5
+meta-yocto-bsp        /home/blacksun/Projects/Odroid/StandAlone/poky/meta-yocto-bsp  5
+blacksun@BEAST:~/Projects/Odroid/StandAlone/poky/build$ bitbake-layers add-layer ../meta-odroid/
+
+
+bitbake core-image-minimal
